@@ -5,9 +5,12 @@
 ## cacheSolve(cachedMatrix)
 
 
-## This function generates an Object that holds a matrix and it's
+## This function generates a cacheMatrix object that holds a matrix and it's
 ## possibily cached inverse. In order to calculate the inverse using caching
-## use the cacheSolve method.
+## use the cacheSolve function.
+## To construct a cachedMatrix, pass a matrix:
+## cachedMatrix <- makeCacheMatrix(matrix(1:4,2,2))
+
 makeCacheMatrix <- function(x = matrix()) {
   inverse <- NULL
   set <- function(y) {
@@ -28,6 +31,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## which was constructed my using the makeCacheMatrix function.
 ## The First call calculates the inverse, every succeeding call
 ## uses the cached inverse.
+## To calculate the inverse pass the cacheMatrix object:
+## cacheSolve(cachedMatrix)
 
 cacheSolve <- function(x, ...) {
   i <- x$getinverse()
